@@ -13,7 +13,7 @@ const cors         = require('cors')
 
 
 mongoose
-  .connect('mongodb://localhost/backend', {useNewUrlParser: true})
+  .connect('mongodb://localhost/proyecto-final-dia-cero', {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -34,7 +34,7 @@ app.use(cookieParser());
 app.use(
   cors({
     credentials: true,
-    origin: ['http://localhost:3000'] // <== this will be the URL of our React app (it will be running on port 3000)
+    origin: ['http://localhost:3001'] // <== this will be the URL of our React app (it will be running on port 3000)
   })
 );
 
@@ -58,7 +58,7 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 
 // default value for title local
-app.locals.title = 'Express - Generated with IronGenerator';
+app.locals.title = 'Este es mi backend en puerto 3001';
 
 
 
